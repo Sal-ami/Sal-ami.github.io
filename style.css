@@ -1,0 +1,111 @@
+/* pickle.dev — quiet, warm, minimal */
+
+@font-face {
+  font-family: "Martian Mono";
+  src: url("fonts/MartianMono-Regular.woff2") format("woff2");
+  font-weight: 400; font-display: swap;
+}
+@font-face {
+  font-family: "Martian Mono";
+  src: url("fonts/MartianMono-Bold.woff2") format("woff2");
+  font-weight: 700; font-display: swap;
+}
+
+:root {
+  --bg: #161310;
+  --ink: #d9d2c5;
+  --dim: #8a8272;
+  --faint: #55503f;
+  --line: #2a251d;
+  --accent: #d98e56;
+  --mono: "Martian Mono", "Cascadia Code", Consolas, monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+header {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 2.2rem 1.2rem 4.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.name { font-weight: 700; letter-spacing: 0.02em; }
+
+nav { display: flex; gap: 1.4rem; }
+
+nav a {
+  color: var(--dim);
+  text-decoration: none;
+  font-size: 12px;
+}
+nav a:hover { color: var(--accent); }
+
+main {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 0 1.2rem;
+}
+
+section { margin-bottom: 4.5rem; }
+
+#about p {
+  font-size: 15px;
+  line-height: 2;
+  color: var(--ink);
+}
+
+h2 {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: 0.9rem;
+}
+
+ul { list-style: none; }
+
+li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+li a:hover { color: var(--accent); }
+
+li time {
+  color: var(--faint);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+footer {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 3rem 1.2rem 2.4rem;
+  border-top: 1px solid var(--line);
+}
+footer p { color: var(--faint); font-size: 11px; }
+
+@media (max-width: 480px) {
+  header { flex-direction: column; gap: 0.6rem; }
+  li a { flex-direction: column; gap: 0.15rem; }
+}
