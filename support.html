@@ -6,22 +6,63 @@
 <title>support · salami.dev</title>
 <link rel="stylesheet" href="style.css">
 <style>
-  .support-intro { max-width: 620px; }
-  .support-intro p { font-size: 15px; line-height: 2; color: var(--ink); }
-  .support-note { font-size: 12px; color: var(--dim); }
-  .tiers { display: grid; grid-template-columns: 1fr; gap: 1rem; }
-  .tier { display: flex; flex-direction: column; gap: 0.9rem; padding: 1.4rem 1.2rem; border: 1px solid var(--line); border-radius: 6px; background: transparent; }
-  .tier.top { border-color: var(--accent); }
-  .tier .t-head { display: flex; justify-content: space-between; align-items: baseline; }
-  .tier .t-name { font-weight: 700; color: var(--ink); letter-spacing: 0.02em; }
+  .s-layout { max-width: 620px; margin: 0 auto; }
+
+  .notice {
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 3rem;
+    background: rgba(217,142,86,0.04);
+  }
+  .notice .n-head {
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 0.5rem; font-weight: 700;
+  }
+  .notice p { color: var(--dim); font-size: 13px; line-height: 1.8; margin: 0; }
+  .notice p + p { margin-top: 0.6rem; }
+
+  .s-intro { margin-bottom: 3.5rem; }
+  .s-intro h1 {
+    font-size: 16px; font-weight: 700; color: var(--ink);
+    letter-spacing: 0.01em; margin-bottom: 1rem;
+  }
+  .s-intro p { color: var(--dim); font-size: 13px; line-height: 1.9; max-width: 60ch; }
+
+  .tier {
+    display: flex; flex-direction: column; gap: 1.1rem;
+    padding: 1.5rem 1.3rem; margin-bottom: 1rem;
+    border: 1px solid var(--line); border-radius: 6px;
+    transition: border-color 0.2s ease;
+  }
+  .tier:hover { border-color: var(--accent); }
+  .tier.top { border-color: var(--accent); position: relative; }
+  .tier .tag {
+    position: absolute; top: -0.6rem; right: 1rem;
+    background: var(--accent); color: var(--bg);
+    font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 0.2rem 0.7rem; border-radius: 3px;
+  }
+  .tier .t-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+  .tier .t-name { font-weight: 700; color: var(--ink); font-size: 15px; }
   .tier .t-price { color: var(--accent); font-size: 13px; white-space: nowrap; }
   .tier .t-desc { color: var(--dim); font-size: 13px; line-height: 1.7; }
-  .tier ul.perks { list-style: none; padding: 0; }
-  .tier ul.perks li { padding-left: 1rem; color: var(--ink); font-size: 13px; line-height: 1.9; }
-  .tier ul.perks li::before { content: "~"; color: var(--accent); margin-right: 0.6rem; }
-  .tier .t-cta { display: block; width: 100%; text-align: center; padding: 0.65rem 0; text-decoration: none; border: 1px solid var(--accent); color: var(--accent); border-radius: 4px; font-weight: 700; font-size: 13px; transition: all 0.15s ease; }
+  .tier ul.perks { list-style: none; padding: 0; margin: 0; }
+  .tier ul.perks li { color: var(--ink); font-size: 13px; line-height: 1.85; }
+  .tier ul.perks li::before { content: "~"; color: var(--accent); margin-right: 0.7rem; }
+  .tier .t-cta {
+    display: inline-block; align-self: flex-start;
+    padding: 0.6rem 1.2rem; text-decoration: none;
+    border: 1px solid var(--accent); color: var(--accent);
+    border-radius: 4px; font-weight: 700; font-size: 13px;
+    transition: all 0.15s ease;
+  }
   .tier .t-cta:hover { background: var(--accent); color: var(--bg); }
-  .tier.highlight .t-highlight { color: var(--accent); font-size: 11px; letter-spacing: 0.12em; }
+
+  .foot-note { margin-top: 3rem; }
+  .foot-note p { color: var(--faint); font-size: 11px; line-height: 1.8; max-width: 62ch; }
+  .foot-note p + p { margin-top: 0.5rem; }
 </style>
 </head>
 <body>
@@ -35,62 +76,67 @@
   </nav>
 </header>
 
-<main>
+<main class="s-layout">
 
-  <section class="support-intro">
-    <p>This blog is a hobby. No ads, no tracking, nothing harvested. If you get value out of the projects and posts here, supporting the channel keeps it going.</p>
-    <p class="support-note">Subscribe monthly on Polar. Every tier is recurring and can be cancelled anytime. Your support goes straight into making and documenting more.</p>
+  <div class="notice">
+    <div class="n-head">before you subscribe</div>
+    <p>Some tiers include a Discord-based perk. We do not run a Discord server yet. When we spin one up, backers and legends get a role there. Until then you are never blocked from a perk you paid for.</p>
+    <p>You are never asked for an email to subscribe. We do not want your data and we do not track you.</p>
+  </div>
+
+  <section class="s-intro">
+    <h1>support this project</h1>
+    <p>If the posts and builds here get you somewhere, a subscription keeps it going. No paywall, no locked content. Just an option to chip in and get some fun perks back.</p>
   </section>
 
-  <section id="tiers" style="margin-top:3rem">
-    <h2>support tiers</h2>
-    <div class="tiers">
+  <section id="tiers">
 
-      <div class="tier">
-        <div class="t-head"><span class="t-name">pay what you want</span><span class="t-price">any amount / mo</span></div>
-        <p class="t-desc">For anyone who wants to drop a few cents or a few dollars. No strings.</p>
-        <ul class="perks">
-          <li>Name added to the wall of supporters on this site</li>
-        </ul>
-        <a class="t-cta" href="https://buy.polar.sh/polar_cl_I7ChwTmrZj51CGyfmsJgMGZJtFl3UU3AMai9i2BsaVz">support for free to pick your amount</a>
-      </div>
-
-      <div class="tier">
-        <div class="t-head"><span class="t-name">friend</span><span class="t-price">$5 / mo</span></div>
-        <p class="t-desc">Early access to everything this channel puts out.</p>
-        <ul class="perks">
-          <li>Everything in pay what you want</li>
-          <li>Early uploads before they go public</li>
-          <li>Name on the wall of supporters</li>
-        </ul>
-        <a class="t-cta" href="https://buy.polar.sh/polar_cl_OO4JuaUofb5xj3MqV59PE3jcHD9PGXB2ctQN30BudMW">become a friend</a>
-      </div>
-
-      <div class="tier">
-        <div class="t-head"><span class="t-name">backer</span><span class="t-price">$10 / mo</span></div>
-        <p class="t-desc">The people who make the channel feel real.</p>
-        <ul class="perks">
-          <li>Everything in friend</li>
-          <li>Name read and thanked at the end of every video</li>
-          <li>Vote on what gets built and documented next</li>
-        </ul>
-        <a class="t-cta" href="https://buy.polar.sh/polar_cl_ID7mzdH450GMCQgVjkcDvO5UNvh6zYXFvntfl4DshBR">become a backer</a>
-      </div>
-
-      <div class="tier top highlight">
-        <div class="t-highlight">top tier</div>
-        <div class="t-head"><span class="t-name">legend</span><span class="t-price">$100 / mo</span></div>
-        <p class="t-desc">For the ones who keep this whole thing running.</p>
-        <ul class="perks">
-          <li>Everything in backer</li>
-          <li>Top spot on the wall of supporters</li>
-          <li>Personal shoutout pinned in a video</li>
-          <li>Monthly behind-the-scenes note on what is coming next</li>
-        </ul>
-        <a class="t-cta" href="https://buy.polar.sh/polar_cl_hbzp1wQi6HqvZLWvXd5ctcd0zAkI0tx2WQiqt0XU1XQ">become a legend</a>
-      </div>
-
+    <div class="tier">
+      <div class="t-head"><span class="t-name">pay what you want</span><span class="t-price">any amount monthly</span></div>
+      <p class="t-desc">Pick your own number. Drop in whenever it feels right.</p>
+      <ul class="perks">
+        <li>Your chosen name on the wall of supporters</li>
+      </ul>
+      <a class="t-cta" href="https://buy.polar.sh/polar_cl_I7ChwTmrZj51CGyfmsJgMGZJtFl3UU3AMai9i2BsaVz">choose your amount</a>
     </div>
+
+    <div class="tier">
+      <div class="t-head"><span class="t-name">friend</span><span class="t-price">$5 monthly</span></div>
+      <p class="t-desc">See things before anyone else does.</p>
+      <ul class="perks">
+        <li>Everything in pay what you want</li>
+        <li>Early uploads before they hit public</li>
+        <li>Name on the wall of supporters</li>
+      </ul>
+      <a class="t-cta" href="https://buy.polar.sh/polar_cl_OO4JuaUofb5xj3MqV59PE3jcHD9PGXB2ctQN30BudMW">become a friend</a>
+    </div>    <div class="tier">
+      <div class="t-head"><span class="t-name">backer</span><span class="t-price">$10 monthly</span></div>
+      <p class="t-desc">The people who make this channel feel real.</p>
+      <ul class="perks">
+        <li>Everything in friend</li>
+        <li>Your name read out in the end card of every video</li>
+        <li>Vote on which project gets built next</li>
+      </ul>
+      <a class="t-cta" href="https://buy.polar.sh/polar_cl_ID7mzdH450GMCQgVjkcDvO5UNvh6zYXFvntfl4DshBR">become a backer</a>
+    </div>
+
+    <div class="tier top">
+      <span class="tag">legend</span>
+      <div class="t-head"><span class="t-name">legend</span><span class="t-price">$100 monthly</span></div>
+      <p class="t-desc">For the ones keeping the whole thing alive.</p>
+      <ul class="perks">
+        <li>Everything in backer</li>
+        <li>Top spot on the wall of supporters</li>
+        <li>Personal shoutout pinned in a video</li>
+        <li>Monthly note on what is coming next</li>
+      </ul>
+      <a class="t-cta" href="https://buy.polar.sh/polar_cl_hbzp1wQi6HqvZLWvXd5ctcd0zAkI0tx2WQiqt0XU1XQ">become a legend</a>
+    </div>
+
+  </section>
+
+  <section class="foot-note">
+    <p>Your wall name and optional Discord username are collected here only at checkout. Your Discord name is only used if a Discord perk becomes available. Nothing is sold, shared, or used for anything else.</p>
   </section>
 
 </main>
