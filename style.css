@@ -1,4 +1,4 @@
-/* pickle.dev — quiet, warm, minimal */
+/* salami — terminal dark, green + blue */
 
 @font-face {
   font-family: "Martian Mono";
@@ -12,12 +12,14 @@
 }
 
 :root {
-  --bg: #161310;
-  --ink: #d9d2c5;
-  --dim: #8a8272;
-  --faint: #55503f;
-  --line: #2a251d;
-  --accent: #d98e56;
+  --bg: #070b12;
+  --panel: #0d131c;
+  --ink: #c6d3e0;
+  --dim: #7b8b9c;
+  --faint: #46586a;
+  --line: #17212d;
+  --accent: #35d07f;
+  --accent-2: #3f8dff;
   --mono: "Martian Mono", "Cascadia Code", Consolas, monospace;
 }
 
@@ -31,6 +33,8 @@ body {
   line-height: 1.85;
   min-height: 100vh;
 }
+
+::selection { background: rgba(53, 208, 127, 0.25); color: var(--ink); }
 
 header {
   max-width: 620px;
@@ -51,7 +55,7 @@ nav a {
   text-decoration: none;
   font-size: 12px;
 }
-nav a:hover { color: var(--accent); }
+nav a:hover { color: var(--accent-2); }
 
 main {
   max-width: 620px;
@@ -72,7 +76,7 @@ h2 {
   font-weight: 400;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--dim);
+  color: var(--accent-2);
   margin-bottom: 0.9rem;
 }
 
