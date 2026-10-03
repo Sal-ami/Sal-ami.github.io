@@ -9,11 +9,10 @@
 <body>
 
 <header>
-  <span class="name"><a href="/" style="color:var(--ink);text-decoration:none">salami</a></span>
+  <span class="name"><a href="/" style="color:var(--accent);text-decoration:none">salami</a></span>
   <nav>
     <a href="/blogs.html">blogs</a>
     <a href="/logs.html">progression logs</a>
-    <a href="/support.html">support</a>
   </nav>
 </header>
 
@@ -47,13 +46,15 @@
       justify-content:center;
       align-items:center;
       border-radius:50%;
-      background-color:#171717;
-      color:#f8f8f8;
+      background-color:transparent;
+      border:1px solid var(--line);
+      color:var(--dim);
       text-decoration:none;
+      transition:all 0.15s ease;
     }
     .social-icon:hover{
-      background-color:#f8f8f8;
-      color:#171717;
+      border-color:var(--accent);
+      color:var(--accent);
     }
   </style>
   <p>
